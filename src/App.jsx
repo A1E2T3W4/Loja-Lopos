@@ -56,7 +56,8 @@ const App = () => (
     <AuthProvider>
       <CartProvider>
         <I18nProvider>  {/* ← Provider na raiz */}
-          <BrowserRouter>
+          {/* ADICIONADO O BASENAME AQUI ABAIXO */}
+          <BrowserRouter basename="/Loja-Lopos">
             <AppRoutes />
           </BrowserRouter>
         </I18nProvider>
