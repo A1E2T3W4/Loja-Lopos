@@ -31,7 +31,7 @@ const LojaLayout = ({ children }) => {
 const AppRoutes = () => (
   <Routes>
     <Route path="/gestao/*" element={<Gestao />} />
-    <Route path="/scanner" element={<Scanner />} />
+   
     <Route
       path="/*"
       element={
