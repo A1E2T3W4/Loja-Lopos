@@ -10,7 +10,7 @@ import GConfigs from "../gestao/GConfigs";
 import GRelatorio from "../gestao/GRelatorio";
 import GEntregas from "../gestao/GEntregas";
 
-const API = "http://localhost/api/login_operador.php";
+const API = "https://lojalopos.infinityfreeapp.com/api/login_operador.php";
 
 const MENUS_DEF = [
   { key: "dashboard", label: "dashboard",    icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" },

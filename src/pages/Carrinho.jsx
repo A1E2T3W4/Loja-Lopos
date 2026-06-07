@@ -21,10 +21,10 @@ const LOJA_COORDS = [-8.8368, 13.2343];
 const TAXA_KM     = 50;
 
 const API_ROUTES = {
-  pedidos:   "http://localhost/api/pedidos.php",
-  pedidosQr: "http://localhost/api/pedidos_qr.php",
-  entregas:  "http://localhost/api/entregas.php",
-  historico: "http://localhost/api/historico.php",
+  pedidos:   "https://lojalopos.infinityfreeapp.com/api/pedidos.php",
+  pedidosQr: "https://lojalopos.infinityfreeapp.com/api/pedidos_qr.php",
+  entregas:  "https://lojalopos.infinityfreeapp.com/api/entregas.php",
+  historico: "https://lojalopos.infinityfreeapp.com/api/historico.php",
 };
 
 async function apiPost(url, body) {

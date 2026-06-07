@@ -3,7 +3,7 @@ import { useTranslation } from "../i18n";
 
 
 
-const API = "http://localhost/api/financeiro.php";
+const API = "https://lojalopos.infinityfreeapp.com/api/financeiro.php";
 
 const CATEGORIAS = [
   "Venda Loja",

@@ -361,7 +361,7 @@ export default function Home() {
     const c = localStorage.getItem("luxe_cliente");
     if (!c) return;
     const { id_cliente, id } = JSON.parse(c);
-    fetch(`http://localhost/api/favoritos.php?id_cliente=${id_cliente || id}`)
+    fetch(`https://lojalopos.infinityfreeapp.com/api/favoritos.php?id_cliente=${id_cliente || id}`)
       .then(r => r.json())
       .then(d => { if (d.success) setFavs(new Set(d.data.map(f => f.id_produto))); })
       .catch(() => {});
@@ -375,10 +375,10 @@ export default function Home() {
     const cid = id_cliente || id;
     const jaFav = favs.has(id_produto);
     if (jaFav) {
-      await fetch(`http://localhost/api/favoritos.php?id_cliente=${cid}&id_produto=${id_produto}`, { method: "DELETE" });
+      await fetch(`https://lojalopos.infinityfreeapp.com/api/favoritos.php?id_cliente=${cid}&id_produto=${id_produto}`, { method: "DELETE" });
       setFavs(prev => { const s = new Set(prev); s.delete(id_produto); return s; });
     } else {
-      await fetch("http://localhost/api/favoritos.php", {
+      await fetch("https://lojalopos.infinityfreeapp.com/api/favoritos.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id_cliente: cid, id_produto }),

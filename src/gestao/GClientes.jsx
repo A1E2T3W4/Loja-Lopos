@@ -225,7 +225,7 @@ const GClientes = ({ G }) => {
 
   const carregar = () => {
     setLoading(true);
-    fetch("http://localhost/api/clientes.php")
+    fetch("https://lojalopos.infinityfreeapp.com/api/clientes.php")
       .then((r) => r.json())
       .then((d) => {
         if (d.success) setClientes(d.data || []);
@@ -254,7 +254,7 @@ const GClientes = ({ G }) => {
 
     setAccionando(cliente.id_cliente);
     try {
-      const res = await fetch("http://localhost/api/clientes.php", {
+      const res = await fetch("https://lojalopos.infinityfreeapp.com/api/clientes.php", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

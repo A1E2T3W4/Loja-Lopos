@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { QRCodeCanvas } from "qrcode.react";
 import { useAuth } from "../context/AuthContext";
 
-const API_HISTORICO = "http://localhost/api/historico_cliente.php";
-const API_ATUALIZAR = "http://localhost/api/atualizar_cliente.php";
-const API_FAVORITOS = "http://localhost/api/favoritos.php";
-const API_CARTAO    = "http://localhost/api/cartao.php";
+const API_HISTORICO = "https://lojalopos.infinityfreeapp.com/api/historico_cliente.php";
+const API_ATUALIZAR = "https://lojalopos.infinityfreeapp.com/api/atualizar_cliente.php";
+const API_FAVORITOS = "https://lojalopos.infinityfreeapp.com/api/favoritos.php";
+const API_CARTAO    = "https://lojalopos.infinityfreeapp.com/api/cartao.php";
 const WHATSAPP_NUM  = "244946244290";
 
 const PALETA_CARTAO = [

@@ -7,7 +7,7 @@ import { useTranslation } from "../i18n";
    COM i18n COMPLETO
 ══════════════════════════════════════════════════════════════ */
 
-const API = "http://localhost/api/relatorio.php";
+const API = "https://lojalopos.infinityfreeapp.com/api/relatorio.php";
 
 const fmt = (v) =>
   new Intl.NumberFormat("pt-AO", {

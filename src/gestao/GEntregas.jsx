@@ -6,7 +6,7 @@ import { useTranslation } from "../i18n";
 /* ══════════════════════════════════════════════════════════════
    CONFIGURAÇÃO — URL correcta da API
 ══════════════════════════════════════════════════════════════ */
-const API = "http://localhost/api/entregas.php";
+const API = "https://lojalopos.infinityfreeapp.com/api/entregas.php";
 
 /* Coordenadas da loja — ajusta conforme a localização real */
 const COORD_LOJA = { lat: -8.8368, lng: 13.2343 };

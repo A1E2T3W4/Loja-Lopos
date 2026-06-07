@@ -11,8 +11,8 @@ const CATS = [
   "Periféricos",
   "Armazenamento",
 ];
-const API = "http://localhost/api/produtos.php";
-const UPLOAD = "http://localhost/api/upload_imagem.php";
+const API = "https://lojalopos.infinityfreeapp.com/api/produtos.php";
+const UPLOAD = "https://lojalopos.infinityfreeapp.com/api/upload_imagem.php";
 
 const fmt = (v) =>
   new Intl.NumberFormat("pt-AO", {

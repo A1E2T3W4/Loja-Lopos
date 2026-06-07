@@ -98,7 +98,7 @@ const GConfigs = ({ operador, G }) => {
     (async () => {
       setLoading(true);
       try {
-        const res  = await fetch("http://localhost/api/configuracoes.php");
+        const res  = await fetch("https://lojalopos.infinityfreeapp.com/api/configuracoes.php");
         const json = await res.json();
         const d = json.data || {};
         setNomeLoja(d.nome_loja || "");
@@ -107,7 +107,7 @@ const GConfigs = ({ operador, G }) => {
         setEmail(d.email || "");
         setEndereco(d.endereco || "");
         setUrlSite(d.url_site || "");
-        setApiBaseUrl(d.api_base_url || "http://localhost/api/");
+        setApiBaseUrl(d.api_base_url || "https://lojalopos.infinityfreeapp.com/api/");
         setEmailjsService(d.emailjs_service || "");
         setEmailjsKey(d.emailjs_key || "");
         setIva(d.iva ?? 14);
@@ -123,7 +123,7 @@ const GConfigs = ({ operador, G }) => {
     setSaving(true); setMsg(null);
     const form = { nome_loja, nif, telefone, email, endereco, url_site, api_base_url, emailjs_service, emailjs_key, iva, taxa_km, compras_vip };
     try {
-      const res  = await fetch("http://localhost/api/configuracoes.php", {
+      const res  = await fetch("https://lojalopos.infinityfreeapp.com/api/configuracoes.php", {
         method:"PUT", headers:{"Content-Type":"application/json"}, body:JSON.stringify(form),
       });
       const json = await res.json();
@@ -289,7 +289,7 @@ const GConfigs = ({ operador, G }) => {
             <label style={labelStyle}>{t("api_base_url")}</label>
             <div style={{ position:"relative" }}>
               <span style={iconWrap}><IcoLink s={13} c={G.muted}/></span>
-              <input style={withIcon} value={api_base_url} placeholder="http://localhost/api/"
+              <input style={withIcon} value={api_base_url} placeholder="https://lojalopos.infinityfreeapp.com/api/"
                 onFocus={onFocus} onBlur={onBlur}
                 onChange={e=>setApiBaseUrl(e.target.value)}/>
             </div>

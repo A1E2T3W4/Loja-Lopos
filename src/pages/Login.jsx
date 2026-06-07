@@ -61,7 +61,7 @@ const Login = () => {
     }
     setLoading(true);
     try {
-      const res = await fetch("http://localhost/api/auth.php?action=login", {
+      const res = await fetch("https://lojalopos.infinityfreeapp.com/api/auth.php?action=login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, senha }),
@@ -91,7 +91,7 @@ const Login = () => {
           },
         );
         const userInfo = await userInfoRes.json();
-        const res = await fetch("http://localhost/api/auth.php?action=google", {
+        const res = await fetch("https://lojalopos.infinityfreeapp.com/api/auth.php?action=google", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -125,7 +125,7 @@ const Login = () => {
     }
     setResetLoading(true);
     try {
-      const res = await fetch("http://localhost/api/reset_senha.php", {
+      const res = await fetch("https://lojalopos.infinityfreeapp.com/api/reset_senha.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ action: "enviar", email: resetEmail }),
@@ -163,7 +163,7 @@ const Login = () => {
     setResetErro("");
     setResetLoading(true);
     try {
-      const res = await fetch("http://localhost/api/reset_senha.php", {
+      const res = await fetch("https://lojalopos.infinityfreeapp.com/api/reset_senha.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -197,7 +197,7 @@ const Login = () => {
     }
     setResetLoading(true);
     try {
-      const res = await fetch("http://localhost/api/reset_senha.php", {
+      const res = await fetch("https://lojalopos.infinityfreeapp.com/api/reset_senha.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -225,7 +225,7 @@ const Login = () => {
     setResetErro("");
     setResetLoading(true);
     try {
-      const res = await fetch("http://localhost/api/reset_senha.php", {
+      const res = await fetch("https://lojalopos.infinityfreeapp.com/api/reset_senha.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ action: "enviar", email: resetEmail }),

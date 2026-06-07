@@ -138,11 +138,11 @@ const GDashboard = ({ operador, G }) => {
       setLoading(true);
       try {
         const [rP, rC, rPr, rFin, rFinMov] = await Promise.all([
-          fetch("http://localhost/api/pedidos.php").then((r) => r.json()).catch(() => ({})),
-          fetch("http://localhost/api/clientes.php").then((r) => r.json()).catch(() => ({})),
-          fetch("http://localhost/api/produtos.php").then((r) => r.json()).catch(() => ({})),
-          fetch("http://localhost/api/financeiro.php").then((r) => r.json()).catch(() => ({})),
-          fetch("http://localhost/api/financeiro.php?tipo=movimentos").then((r) => r.json()).catch(() => ({})),
+          fetch("https://lojalopos.infinityfreeapp.com/api/pedidos.php").then((r) => r.json()).catch(() => ({})),
+          fetch("https://lojalopos.infinityfreeapp.com/api/clientes.php").then((r) => r.json()).catch(() => ({})),
+          fetch("https://lojalopos.infinityfreeapp.com/api/produtos.php").then((r) => r.json()).catch(() => ({})),
+          fetch("https://lojalopos.infinityfreeapp.com/api/financeiro.php").then((r) => r.json()).catch(() => ({})),
+          fetch("https://lojalopos.infinityfreeapp.com/api/financeiro.php?tipo=movimentos").then((r) => r.json()).catch(() => ({})),
         ]);
 
         const pedidos  = rP?.data  || [];

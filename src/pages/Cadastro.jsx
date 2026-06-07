@@ -430,7 +430,7 @@ const Cadastro = () => {
           headers: { Authorization: `Bearer ${tokenResponse.access_token}` },
         });
         const decoded = await ui.json();
-        const res = await fetch("http://localhost/api/auth.php?action=google", {
+        const res = await fetch("https://lojalopos.infinityfreeapp.com/api/auth.php?action=google", {
           method:"POST", headers:{"Content-Type":"application/json"},
           body:JSON.stringify({ email:decoded.email, nome:decoded.name, foto_url:decoded.picture }),
         });
@@ -459,7 +459,7 @@ const Cadastro = () => {
 
     setLoading(true); setErrGeral("");
     try {
-      const res  = await fetch("http://localhost/api/verificar_email.php", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({ action:"enviar", email:form.email }) });
+      const res  = await fetch("https://lojalopos.infinityfreeapp.com/api/verificar_email.php", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({ action:"enviar", email:form.email }) });
       const json = await res.json();
       if (!json.success) { setErrGeral(json.message || "Erro ao gerar código."); setLoading(false); return; }
       const codigo = json.codigo;
@@ -480,10 +480,10 @@ const Cadastro = () => {
     if (codigo.length < 6) { setErrCodigo("Introduza o código completo de 6 dígitos."); return; }
     setLoadingCodigo(true); setErrCodigo("");
     try {
-      const resConf = await fetch("http://localhost/api/verificar_email.php", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({ action:"confirmar", email:form.email, codigo }) });
+      const resConf = await fetch("https://lojalopos.infinityfreeapp.com/api/verificar_email.php", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({ action:"confirmar", email:form.email, codigo }) });
       const jsonConf = await resConf.json();
       if (!jsonConf.success) { setErrCodigo(jsonConf.message || "Código inválido ou expirado."); setLoadingCodigo(false); return; }
-      const resCad = await fetch("http://localhost/api/auth.php?action=cadastro", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({ nome:form.nome, email:form.email, telefone:form.telefone, senha:form.senha }) });
+      const resCad = await fetch("https://lojalopos.infinityfreeapp.com/api/auth.php?action=cadastro", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({ nome:form.nome, email:form.email, telefone:form.telefone, senha:form.senha }) });
       const jsonCad = await resCad.json();
       if (jsonCad.success) { salvarSessao(jsonCad.token, jsonCad.cliente); enviarEmailCadastro(form.nome, form.email).catch(() => {}); setStep(3); }
       else setErrCodigo(jsonCad.message || "Erro ao criar conta.");
@@ -498,7 +498,7 @@ const Cadastro = () => {
     try {
       let codigo = codigoGerado;
       if (!codigo) {
-        const res  = await fetch("http://localhost/api/verificar_email.php", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({ action:"enviar", email:form.email }) });
+        const res  = await fetch("https://lojalopos.infinityfreeapp.com/api/verificar_email.php", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({ action:"enviar", email:form.email }) });
         const json = await res.json();
         if (!json.success) { setErrCodigo(json.message || "Erro ao reenviar código."); return; }
         codigo = json.codigo; setCodigoGerado(codigo);

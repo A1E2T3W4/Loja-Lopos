@@ -150,7 +150,7 @@ const GPedidos = ({ G }) => {
 
   const carregarPedidos = () => {
     setLoading(true);
-    fetch("http://localhost/api/pedidos.php")
+    fetch("https://lojalopos.infinityfreeapp.com/api/pedidos.php")
       .then((r) => r.json())
       .then((d) => {
         if (d.success) setPedidos(d.data || []);
@@ -174,7 +174,7 @@ const GPedidos = ({ G }) => {
     setAtualizando(true);
     setMsgSucesso("");
     try {
-      const res = await fetch("http://localhost/api/pedidos.php", {
+      const res = await fetch("https://lojalopos.infinityfreeapp.com/api/pedidos.php", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
