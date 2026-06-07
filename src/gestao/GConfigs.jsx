@@ -279,7 +279,7 @@ const GConfigs = ({ operador, G }) => {
             <label style={labelStyle}>{t("url_site")}</label>
             <div style={{ position:"relative" }}>
               <span style={iconWrap}><IcoGlobe s={13} c={G.muted}/></span>
-              <input style={withIcon} value={url_site} placeholder="http://localhost:5173"
+              <input style={withIcon} value={url_site} placeholder="https://lojalopos.infinityfreeapp.com:5173"
                 onFocus={onFocus} onBlur={onBlur}
                 onChange={e=>setUrlSite(e.target.value)}/>
             </div>

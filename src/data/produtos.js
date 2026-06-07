@@ -1,4 +1,4 @@
-const BASE = "http://localhost/api/produtos.php";
+const BASE = "https://lojalopos.infinityfreeapp.com/api/produtos.php";
 
 /**
  * Loja — só produtos disponíveis com stock > 0
