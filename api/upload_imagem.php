@@ -28,7 +28,7 @@ $nome    = uniqid("prod_", true) . "." . $ext;
 $destino = $uploadDir . $nome;
 
 if (move_uploaded_file($file["tmp_name"], $destino)) {
-    $url = "http://localhost/uploads/produtos/" . $nome;
+   $url = "https://lojalopos.infinityfreeapp.com/uploads/produtos/" . $nome;
     echo json_encode(["success" => true, "url" => $url, "nome" => $nome]);
 } else {
     echo json_encode(["success" => false, "message" => "Erro ao guardar ficheiro."]);
